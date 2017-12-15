@@ -9,6 +9,8 @@ export default class ModalIncluir extends Component {
          title : this.props.title,
          showModal: this.props.sm
       }
+      this.open = this.open.bind(this)
+      this.close = this.close.bind(this)
     }
     
     open(){
@@ -20,7 +22,7 @@ export default class ModalIncluir extends Component {
   render() {
     return (
       <div>
-        <Modal show={this.state.showModal} onHiden={this.close}>
+      <Modal show={this.state.showModal} onHiden={this.close}>
       <Modal.Header>
         <Modal.Title>{this.state.title}</Modal.Title>
       </Modal.Header>
@@ -30,7 +32,7 @@ export default class ModalIncluir extends Component {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button onClick={this.close()}>Close</Button>
+        <Button onClick={this.close}>Close</Button>
         <Button bsStyle="primary">Save changes</Button>
       </Modal.Footer>
 
